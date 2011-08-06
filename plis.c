@@ -196,6 +196,8 @@ int main(void)
         if (strlen(code) == 0) {
             continue;
         }
+        if (!strncmp (code, "q", 1))
+            break;
         add_history(code);
         Node *ast = plis_parse(code);
         if (ast) {
