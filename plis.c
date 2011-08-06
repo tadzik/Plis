@@ -179,6 +179,7 @@ int plis_eval(Node *ast)
         return atoi(ast->val);
     } else {
         Node **list = (Node **)ast->val;
+        if (list[0] == NULL) return 0;
         if (list[0]->type == LITERAL) {
             return plis_funcall(list[0]->val, list + 1);
         } else {
@@ -192,6 +193,9 @@ int main(void)
 {
     char *code;
     while ((code = readline("> "))) {
+        if (strlen(code) == 0) {
+            continue;
+        }
         add_history(code);
         Node *ast = plis_parse(code);
         if (ast) {
