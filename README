@@ -1,0 +1,5 @@
+Stupid LISP-alike interpreter
+
+Try things like (sum 2 3) or (say (sum 3 (sum 4 7)))
+
+Requires readline
