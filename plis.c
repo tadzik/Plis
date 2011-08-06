@@ -147,7 +147,7 @@ int plis_sum(Node **ast)
     Node *cur;
     int i = 0;
     while ((cur = ast[i++])) {
-        ret += atoi(cur->val);
+        ret += plis_eval(cur);
     }
     return ret;
 }
